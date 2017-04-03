@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MySleepBook.Views.PopUps.InfoPopUp"
+             BackgroundColor="Blue">
+  
+  <AbsoluteLayout VerticalOptions="Center"
+                  HorizontalOptions="Center"
+                  HeightRequest="150"
+                  WidthRequest="350">
+    <AbsoluteLayout.Padding>
+      <Thickness>20</Thickness>
+    </AbsoluteLayout.Padding>
+    <Frame BackgroundColor="White"
+           AbsoluteLayout.LayoutFlags="All"
+           AbsoluteLayout.LayoutBounds="0,0,1,1">
+      <ScrollView>
+        <StackLayout>
+          <Label TextColor="Black"
+                 Text="sdfsd fs df sd f sdfsd fsdf s d f sd fs d f sd f s dfsd f sdf sd f s df sd f sd f sdf"></Label>
+        </StackLayout>
+      </ScrollView>
+    </Frame>
+    <ContentView AbsoluteLayout.LayoutFlags="All"
+                 AbsoluteLayout.LayoutBounds="1.125, -0.125 , 0.2, 0.2">
+      <Image HeightRequest="30"
+             WidthRequest="30"
+             Source="http://guidelines.3dn.ru/SB/close.png"></Image>
+    </ContentView>
+  </AbsoluteLayout>
+  
+</ContentPage>

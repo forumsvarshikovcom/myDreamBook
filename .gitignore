@@ -3,3 +3,10 @@
 ################################################################################
 
 /Project/.vs/MySleepBook/v14
+/Project/MySleepBook/MySleepBook/bin/Debug
+/Project/MySleepBook/MySleepBook/obj/Debug
+/Project/MySleepBook/MySleepBook.Droid/bin/Debug
+/Project/MySleepBook/MySleepBook.Droid/obj/Debug
+/Project/MySleepBook/MySleepBook.UWP/bin
+/Project/MySleepBook/MySleepBook.UWP/obj
+/Project/packages

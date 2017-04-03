@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MySleepBook.Views.WelcomePage"
+             BackgroundColor="#f4e1c1"
+             Title="Добро пожаловать">
+  <ScrollView>
+    <StackLayout>
+      <AbsoluteLayout VerticalOptions="Start" WidthRequest="340" HeightRequest="130" HorizontalOptions="CenterAndExpand">
+        <AbsoluteLayout.Padding>
+          <Thickness>0,50,0,0</Thickness>
+        </AbsoluteLayout.Padding>
+        <Image AbsoluteLayout.LayoutBounds="1,1,1,1"
+               AbsoluteLayout.LayoutFlags ="All"
+               Aspect="AspectFit">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Logo.png"
+                        WinPhone="Assets/Logo.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_First"
+               Opacity="0"
+               AbsoluteLayout.LayoutBounds="0.4,0.9,0.25,0.25"
+               AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star.png"
+                        WinPhone="Assets/Star.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Second"
+               Opacity="0"
+               AbsoluteLayout.LayoutBounds="0.9,0,0.25,0.25"
+               AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star_2.png"
+                        WinPhone="Assets/Star_2.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Third"
+               Opacity="0"
+               AbsoluteLayout.LayoutBounds="1.1,1.2,0.35,0.35"
+               AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star_2.png"
+                        WinPhone="Assets/Star_2.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Forth"
+               Opacity="0"
+               AbsoluteLayout.LayoutBounds="0.57,0.3,0.1,0.1"
+               AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star.png"
+                        WinPhone="Assets/Star.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Fifth"
+                 Opacity="0"
+                 AbsoluteLayout.LayoutBounds="-0.15,-0.1,0.30,0.30"
+                 AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star_2.png"
+                        WinPhone="Assets/Star_2.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Six"
+                 Opacity="0"
+                 AbsoluteLayout.LayoutBounds="0.25,0.55,0.15,0.15"
+                 AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star.png"
+                        WinPhone="Assets/Star.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Seventh"
+                 Opacity="0"
+                 AbsoluteLayout.LayoutBounds="0,1,0.3,0.3"
+                 AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star_2.png"
+                        WinPhone="Assets/Star_2.png"/>
+          </Image.Source>
+        </Image>
+        <Image x:Name="Star_Eight"
+                 Opacity="0"
+                 AbsoluteLayout.LayoutBounds="1,0.8,0.1,0.1"
+                 AbsoluteLayout.LayoutFlags ="All">
+          <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="Star.png"
+                        WinPhone="Assets/Star.png"/>
+          </Image.Source>
+        </Image>
+      </AbsoluteLayout>
+      <Label TextColor="#009788"
+             FontSize="Medium"
+             HorizontalOptions="Center"
+             Text="{Binding WelcomeText}"
+             Margin="0,50,0,0"
+             HorizontalTextAlignment="Center">
+      </Label>
+      <Button TextColor="White"
+              BackgroundColor="#00355a"
+              WidthRequest="150"
+              HorizontalOptions="CenterAndExpand"
+              Text="Поделиться!"
+              Margin ="0,50,0,0"
+              FontSize="Medium"
+              Command="{Binding ShareCommand}">
+      </Button>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

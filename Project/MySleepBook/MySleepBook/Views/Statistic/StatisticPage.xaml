@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MySleepBook.Views.Statistic.StatisticPage"
+             Title="Статистика"
+             BackgroundColor="#f4e1c1">
+  <Button Text="Test" Command="{Binding ShowAddEditStatisticPopUp}"></Button>
+</ContentPage>

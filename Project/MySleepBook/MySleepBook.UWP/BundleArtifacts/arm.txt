@@ -1,0 +1,2 @@
+MainPackage=D:\Work Folder\MySleepBook\Project\MySleepBook\MySleepBook.UWP\bin\ARM\Release\MySleepBook.UWP_1.0.3.0_ARM.appx
+SymbolPackage=D:\Work Folder\MySleepBook\Project\MySleepBook\MySleepBook.UWP\AppPackages\MySleepBook.UWP_1.0.3.0_Test\MySleepBook.UWP_1.0.3.0_ARM.appxsym

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customControls="clr-namespace:MySleepBook.CustomControls;assembly=MySleepBook"
+             x:Class="MySleepBook.Views.DreamBookMeans.MeansSearchPage"
+             BackgroundColor="#f4e1c1"
+             Title="Толкование снов">
+
+  <ScrollView VerticalOptions="FillAndExpand"
+              BackgroundColor="#f4e1c1">
+    <AbsoluteLayout VerticalOptions="FillAndExpand">
+      <Image AbsoluteLayout.LayoutFlags="PositionProportional"
+             AbsoluteLayout.LayoutBounds="0.5,0,250,100"
+             x:Name="Image_Search"
+             Opacity="0"
+             Margin="0,10,0,0">
+        <Image.Source>
+          <OnPlatform
+            x:TypeArguments="ImageSource"
+            Android="Logo_search.png"
+            WinPhone="Assets/Logo_search.png"/>
+        </Image.Source>
+      </Image>
+      <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="ContentWrapper"
+                   VerticalOptions="FillAndExpand"
+                   Spacing="0">
+        <StackLayout.Padding>
+          <Thickness>20</Thickness>
+        </StackLayout.Padding>
+        <customControls:EntryWithBorder Text="{Binding SearchText}"
+               VerticalOptions="Start"
+               TextColor="#00325e"
+               FontSize="Medium"
+               Placeholder="Девушка..."
+               BackgroundColor="#f8eedc">
+        </customControls:EntryWithBorder>
+        <ListView ItemsSource="{Binding AutocompleteItems}"
+                  IsVisible="{Binding AutocompleteIsVisible}"
+                  SeparatorVisibility="Default"
+                  SeparatorColor="#00325e"
+                  ItemSelected="Autocomplete_OnItemSelected">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <StackLayout HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand">
+                    <StackLayout.Padding>
+                      <Thickness>10</Thickness>
+                    </StackLayout.Padding>
+                    <Label HorizontalOptions="Start"
+                           Text="{Binding Name}"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="#00325e"
+                           FontSize="Medium"/>
+                  </StackLayout>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <Label TextColor="#009788"
+             FontSize="Medium"
+             HorizontalOptions="Center"
+             Text="{Binding Description}"
+             Margin="0,50,0,0"
+             IsVisible="{Binding DescriptionIsVisible}"
+             HorizontalTextAlignment="Center">
+        </Label>
+      </StackLayout>
+    </AbsoluteLayout>
+  </ScrollView>
+</ContentPage>
