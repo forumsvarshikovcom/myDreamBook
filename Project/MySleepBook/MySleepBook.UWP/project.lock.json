@@ -11,6 +11,16 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -2257,6 +2267,16 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
         }
       },
       "Microsoft.CSharp/4.0.1": {
@@ -4579,6 +4599,16 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
         }
       },
       "Microsoft.CSharp/4.0.1": {
@@ -6942,6 +6972,16 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -9271,6 +9311,16 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
         }
       },
       "Microsoft.CSharp/4.0.1": {
@@ -11643,6 +11693,16 @@
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
         }
       },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -13972,6 +14032,16 @@
         },
         "runtime": {
           "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {}
+        }
+      },
+      "FreshEssentials/2.1.3": {
+        "compile": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/FreshEssentials.UWP.dll": {},
+          "lib/uap10.0/FreshEssentials.dll": {}
         }
       },
       "Microsoft.CSharp/4.0.1": {
@@ -16346,6 +16416,32 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.XML",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll",
         "lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.pdb"
+      ]
+    },
+    "FreshEssentials/2.1.3": {
+      "sha512": "DYLJ4YUmWxaczk3h+1Z7Gqr195KmbTlNx16i9w9URbaI7okI4BCVXDVQFjJsJh2/UZHXk7we1ftM1tNHDpWuxg==",
+      "type": "package",
+      "files": [
+        "FreshEssentials.2.1.3.nupkg.sha512",
+        "FreshEssentials.nuspec",
+        "lib/MonoAndroid10/FreshEssentials.Droid.dll",
+        "lib/MonoAndroid10/FreshEssentials.Droid.pdb",
+        "lib/MonoAndroid10/FreshEssentials.dll",
+        "lib/MonoAndroid10/FreshEssentials.pdb",
+        "lib/Xamarin.iOS10/FreshEssentials.dll",
+        "lib/Xamarin.iOS10/FreshEssentials.dll.mdb",
+        "lib/Xamarin.iOS10/FreshEssentials.iOS.dll",
+        "lib/Xamarin.iOS10/FreshEssentials.iOS.dll.mdb",
+        "lib/Xamarin.iOS10/FreshEssentials.iOS.pdb",
+        "lib/Xamarin.iOS10/FreshEssentials.pdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FreshEssentials.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FreshEssentials.dll.mdb",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FreshEssentials.pdb",
+        "lib/uap10.0/FreshEssentials.UWP.dll",
+        "lib/uap10.0/FreshEssentials.UWP.pdb",
+        "lib/uap10.0/FreshEssentials.UWP.pri",
+        "lib/uap10.0/FreshEssentials.dll",
+        "lib/uap10.0/FreshEssentials.pdb"
       ]
     },
     "Microsoft.CSharp/4.0.1": {
@@ -22781,6 +22877,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "FreshEssentials >= 2.1.3",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Rg.Plugins.Popup >= 1.0.4",
       "Unity >= 4.0.1",

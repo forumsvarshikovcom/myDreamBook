@@ -62,6 +62,16 @@ namespace MySleepBook.Infrastructure.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to У Вас пока нет данных, чтобы отобразить график сновидений.
+        ///Нажмите на дату в календаре и заполните форму..
+        /// </summary>
+        internal static string txt_noStatistic {
+            get {
+                return ResourceManager.GetString("txt_noStatistic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to К сожалению мы ничего не можем найти по Вашему запросу.
         ///Попробуйте ввести похожее слово или поищите что-нибудь другое.
         /// </summary>

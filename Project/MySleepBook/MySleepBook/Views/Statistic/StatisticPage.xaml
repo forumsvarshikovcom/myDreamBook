@@ -3,57 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:chart="clr-namespace:MySleepBook.CustomControls.Chart;assembly=MySleepBook"
              xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             xmlns:freshEssentials="clr-namespace:FreshEssentials;assembly=FreshEssentials"
              x:Class="MySleepBook.Views.Statistic.StatisticPage"
              Title="Статистика"
              BackgroundColor="#f4e1c1">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <freshEssentials:InverseBooleanConverter x:Key="InverseConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
   <ScrollView VerticalOptions="FillAndExpand">
     <StackLayout VerticalOptions="FillAndExpand">
+      <freshEssentials:SegmentedButtonGroup SelectedIndex="{Binding ChartTypeSelectedIndex}"
+                                            IsVisible="{Binding ChartIsVisible}"
+                                            WidthRequest="300"
+                                            HorizontalOptions="Center"
+                                            OnColor="#009788"
+                                            OffColor="#f4e1c1"
+                                            CornerRadius="5"
+                                            Margin="20"
+                                            HeightRequest="40">
+        <freshEssentials:SegmentedButtonGroup.SegmentedButtons>
+          <freshEssentials:SegmentedButton Title="Неделя"/>
+          <freshEssentials:SegmentedButton Title="Месяц"/>
+        </freshEssentials:SegmentedButtonGroup.SegmentedButtons>
+      </freshEssentials:SegmentedButtonGroup>
       <chart:Chart x:Name="CombinationChart"
-                   Color="#009788"
-                   HorizontalOptions="FillAndExpand"
+                   IsVisible="{Binding ChartIsVisible}"
+                   Color="#18a295"
+                   HorizontalOptions="Center"
                    HeightRequest="300"
                    WidthRequest="450"
                    Spacing="10">
-
         <chart:Chart.Series>
-          <chart:Series Type="Line" Color="#00355a">
-
-            <chart:Series.Points>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-              <chart:DataPoint Label="Jan" Value="27.5"/>
-              <chart:DataPoint Label="Feb" Value="37.5"/>
-              <chart:DataPoint Label="March" Value="42.5"/>
-            </chart:Series.Points>
-
+          <chart:Series x:Name="goodSleepLine" Type="Line" Color="#009788">
+          </chart:Series>
+          <chart:Series x:Name="badSleepLine" Type="Line" Color="#b81532">
           </chart:Series>
         </chart:Chart.Series>
-
       </chart:Chart>
-      <Button Text="Test"
-              Command="{Binding ShowAddEditStatisticPopUp}"
-              VerticalOptions="End">
-      </Button>
-      <controls:Calendar Padding="10,0,10,0" StartDay="Monday" SelectedBorderWidth="4" DisabledBorderColor="Black"></controls:Calendar>
+      <Label Text="{Binding NoStatisticText}"
+             IsVisible="{Binding ChartIsVisible, Converter={StaticResource InverseConverter}}"
+             Margin="20"
+             Font="Medium"
+             HorizontalTextAlignment="Center"
+             TextColor="#009788"></Label>
+      <controls:Calendar x:Name="CustomCalendar"
+                         StartDay="Monday"
+                         VerticalOptions="EndAndExpand">
+      </controls:Calendar>
     </StackLayout>
   </ScrollView>
 </ContentPage>

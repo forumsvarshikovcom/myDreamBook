@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "FreshEssentials": "2.1.3",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Rg.Plugins.Popup": "1.0.4",
     "sqlite-net-pcl": "1.3.1",
