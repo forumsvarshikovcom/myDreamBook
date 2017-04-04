@@ -59,6 +59,7 @@ namespace MySleepBook.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e, Rg.Plugins.Popup.Windows.Popup.GetExtraAssemblies());
+                XamForms.Controls.Windows.Calendar.Init();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

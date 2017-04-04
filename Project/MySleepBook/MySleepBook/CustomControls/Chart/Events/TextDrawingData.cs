@@ -21,17 +21,20 @@
 		/// <value>The text.</value>
 		public string Text { get; set; }
 
+        public double Rotation { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TextDrawingData"/> class.
 		/// </summary>
 		/// <param name="text">The text.</param>
 		/// <param name="x">The x.</param>
 		/// <param name="y">The y.</param>
-		public TextDrawingData(string text, double x, double y)
+		public TextDrawingData(string text, double x, double y, double rotation = 0)
         {
             Text = text;
             X = x;
             Y = y;
+            Rotation = rotation;
         }
     }
 }

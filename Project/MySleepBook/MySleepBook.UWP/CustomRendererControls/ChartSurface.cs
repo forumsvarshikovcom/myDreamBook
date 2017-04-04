@@ -27,7 +27,6 @@ namespace MySleepBook.UWP.CustomRendererControls
         /// The colors
         /// </summary>
         public Color[] Colors;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartSurface"/> class.
         /// </summary>
@@ -113,7 +112,7 @@ namespace MySleepBook.UWP.CustomRendererControls
             Line line = new Line
             {
                 Stroke = Brush,
-                StrokeThickness = 2,
+                StrokeThickness = 1,
                 X1 = e.Data.XFrom,
                 Y1 = e.Data.YFrom,
                 X2 = e.Data.XTo,
@@ -134,7 +133,7 @@ namespace MySleepBook.UWP.CustomRendererControls
             Line line = new Line
             {
                 Stroke = new SolidColorBrush(Colors[e.Data.SeriesNo]),
-                StrokeThickness = 2,
+                StrokeThickness = 3,
                 X1 = e.Data.XFrom,
                 Y1 = e.Data.YFrom,
                 X2 = e.Data.XTo,
@@ -152,7 +151,7 @@ namespace MySleepBook.UWP.CustomRendererControls
         /// <param name="e">The e.</param>
         void _chart_OnDrawText(object sender, Chart.DrawEventArgs<TextDrawingData> e)
         {
-            TextBlock textBlock = new TextBlock { Foreground = Brush, Text = e.Data.Text };
+            TextBlock textBlock = new TextBlock { Foreground = Brush, Text = e.Data.Text, RenderTransform = new RotateTransform {Angle = e.Data.Rotation} };
 
             Canvas.SetLeft(textBlock, e.Data.X);
             Canvas.SetTop(textBlock, e.Data.Y);

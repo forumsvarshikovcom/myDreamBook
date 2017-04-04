@@ -1,8 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:MySleepBook.CustomControls.Chart;assembly=MySleepBook"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
              x:Class="MySleepBook.Views.Statistic.StatisticPage"
              Title="Статистика"
              BackgroundColor="#f4e1c1">
-  <Button Text="Test" Command="{Binding ShowAddEditStatisticPopUp}"></Button>
+  <ScrollView VerticalOptions="FillAndExpand">
+    <StackLayout VerticalOptions="FillAndExpand">
+      <chart:Chart x:Name="CombinationChart"
+                   Color="#009788"
+                   HorizontalOptions="FillAndExpand"
+                   HeightRequest="300"
+                   WidthRequest="450"
+                   Spacing="10">
+
+        <chart:Chart.Series>
+          <chart:Series Type="Line" Color="#00355a">
+
+            <chart:Series.Points>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+              <chart:DataPoint Label="Jan" Value="27.5"/>
+              <chart:DataPoint Label="Feb" Value="37.5"/>
+              <chart:DataPoint Label="March" Value="42.5"/>
+            </chart:Series.Points>
+
+          </chart:Series>
+        </chart:Chart.Series>
+
+      </chart:Chart>
+      <Button Text="Test"
+              Command="{Binding ShowAddEditStatisticPopUp}"
+              VerticalOptions="End">
+      </Button>
+      <controls:Calendar Padding="10,0,10,0" StartDay="Monday" SelectedBorderWidth="4" DisabledBorderColor="Black"></controls:Calendar>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>

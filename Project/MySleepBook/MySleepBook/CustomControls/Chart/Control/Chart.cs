@@ -448,8 +448,17 @@ namespace MySleepBook.CustomControls.Chart
 
 			for (int i = 0; i < points.Count; i++)
 			{
-				OnDrawText(this, new DrawEventArgs<TextDrawingData>() { Data = new TextDrawingData(points[i].Label, (widthIterator + widthOfAllBars / 2) - (points[i].Label.Length * 4), HeightRequest + 25) });
-				widthIterator += widthPerBar * noOfBarSeries + Spacing;
+			    if (i % 2 == 0)
+			    {
+			        OnDrawText(this,
+			            new DrawEventArgs<TextDrawingData>()
+			            {
+			                Data =
+			                    new TextDrawingData(points[i].Label,
+			                        (widthIterator + widthOfAllBars / 2) - (points[i].Label.Length * 4), HeightRequest + 25, 30)
+			            });
+			    }
+			    widthIterator += widthPerBar * noOfBarSeries + Spacing;
 			}
 		}
 		#endregion
