@@ -1,10 +1,18 @@
-﻿using Xamarin.Forms;
+﻿using Rg.Plugins.Popup.Extensions;
+using Xamarin.Forms;
 
 namespace MySleepBook.ViewModels.PopUps
 {
     public class BasePopUpViewModel:BaseViewModel
     {
         private Rectangle _exitIconBounds;
+
+        public Command ClosePopUpCommand { get; set; }
+
+        public BasePopUpViewModel()
+        {
+            ClosePopUpCommand = new Command(async () => await Navigation.PopAllPopupAsync());
+        }
 
         public Rectangle ExitIconBounds
         {

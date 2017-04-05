@@ -3,6 +3,8 @@ using MySleepBook.Views.PopUps;
 using System.Windows.Input;
 using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.Infrastructure.Resourses;
+using Rg.Plugins.Popup.Animations;
+using Rg.Plugins.Popup.Enums;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
@@ -24,7 +26,7 @@ namespace MySleepBook.ViewModels.Statistics
                 DateSelectAction = () =>
                 {
                     var page = new Statistic_Add_Edit_PopUp();
-                    PopupNavigation.PushAsync(page, false);
+                    PopupNavigation.PushAsync(page, true);
                 }
             };
         }

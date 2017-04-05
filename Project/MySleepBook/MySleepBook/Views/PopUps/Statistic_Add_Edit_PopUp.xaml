@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+<popUps:PopUpBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             xmlns:animation="clr-namespace:MySleepBook.Infrastructure.Animation;assembly=MySleepBook"
+             xmlns:popUps="clr-namespace:MySleepBook.Views.PopUps;assembly=MySleepBook"
              x:Class="MySleepBook.Views.PopUps.Statistic_Add_Edit_PopUp"
              ControlTemplate="{StaticResource PopUpBaseTemplate}">
-  <!--Animations use example-->
-  <pages:PopupPage.Animation>
-    <animation:PopUpAnimation/>
-  </pages:PopupPage.Animation>
-  <!-- Content -->
   <StackLayout>
     <Label TextColor="#009788"
            Text="rrrrr sdfsd fs df sd f sdfsd fsdf s d f sd fs d f sd f s dfsd f sdf sd f s df sd f sd f sdf"></Label>
   </StackLayout>
-</pages:PopupPage>
+</popUps:PopUpBase>

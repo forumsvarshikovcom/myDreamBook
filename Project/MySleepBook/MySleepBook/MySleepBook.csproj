@@ -109,6 +109,7 @@
     <Compile Include="Views\PopUps\InfoPopUp.xaml.cs">
       <DependentUpon>InfoPopUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUps\PopUpBase.cs" />
     <Compile Include="Views\PopUps\Statistic_Add_Edit_PopUp.xaml.cs">
       <DependentUpon>Statistic_Add_Edit_PopUp.xaml</DependentUpon>
     </Compile>

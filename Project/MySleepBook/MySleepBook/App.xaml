@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:customControls="clr-namespace:MySleepBook.CustomControls;assembly=MySleepBook"
+    xmlns:freshEssentials="clr-namespace:FreshEssentials;assembly=FreshEssentials"
     x:Class="MySleepBook.App">
   <Application.Resources>
     <ResourceDictionary>
@@ -23,10 +24,8 @@
             </ScrollView>
           </customControls:CustomFrame>
           <ContentView AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds="{TemplateBinding BindingContext.ExitIconBounds}">
-            <!--<ContentView.GestureRecognizers>
-              <TapGestureRecognizer Tapped="OnCloseButtonTapped"/>
-            </ContentView.GestureRecognizers>-->
+                       AbsoluteLayout.LayoutBounds="{TemplateBinding BindingContext.ExitIconBounds}"
+                       freshEssentials:TappedGestureAttached.Command="{TemplateBinding BindingContext.ClosePopUpCommand}">
             <Image HeightRequest="30"
                    x:Name="CloseImage"
                    WidthRequest="30">
