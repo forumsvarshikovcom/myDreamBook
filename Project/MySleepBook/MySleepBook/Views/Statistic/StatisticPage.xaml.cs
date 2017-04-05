@@ -1,4 +1,9 @@
-﻿using MySleepBook.Infrastructure.Constants;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using MySleepBook.CustomControls;
+using MySleepBook.CustomControls.StatisticCalendar;
+using MySleepBook.Infrastructure.Constants;
 using MySleepBook.ViewModels.Statistics;
 using Xamarin.Forms;
 using XamForms.Controls;
@@ -15,19 +20,25 @@ namespace MySleepBook.Views.Statistic
             BindingContext = _viewModel;
             _viewModel.Navigation = Navigation;
 
-            CustomCalendar.BackgroundColor = CustomColors.Green;
-            CustomCalendar.BorderColor = CustomColors.LightGreen;
-            CustomCalendar.BorderWidth = 1;
-            CustomCalendar.DatesBackgroundColor = CustomColors.Green;
-            CustomCalendar.DatesTextColor = CustomColors.Yellow;
-            CustomCalendar.DatesBackgroundColorOutsideMonth = CustomColors.LightGreen;
-            CustomCalendar.DatesTextColorOutsideMonth = Color.FromHex("#f3e4cb");
-            CustomCalendar.NumberOfWeekTextColor = CustomColors.Yellow;
-            CustomCalendar.OuterBorderWidth = 1;
-            CustomCalendar.SelectedTextColor = CustomColors.Yellow;
-            CustomCalendar.SelectedBorderColor = CustomColors.Yellow;
-            CustomCalendar.SelectedBorderWidth = 2;
-            CustomCalendar.Padding = new Thickness(10);
+            Task.Run(async () =>
+            {
+                await Task.Delay(Device.OS == TargetPlatform.Android ? 260 : 100);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+
+                    _viewModel.CalendarModel.FilledDays = new List<DateTime>
+                    {
+                        new DateTime(2017,4,1),
+                        new DateTime(2017,4,2),
+                        new DateTime(2017,4,3),
+                        new DateTime(2017,4,9)
+                    };
+
+                    var calendar = new StatisticCalendar(_viewModel.CalendarModel);
+                    CalendarWrapper.Children.Add(calendar);
+                    calendar.FadeTo(1, 500);
+                });
+            });
         }
     }
 }

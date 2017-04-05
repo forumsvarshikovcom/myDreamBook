@@ -13,21 +13,22 @@ namespace MySleepBook.Views.PopUps
             InitializeComponent();
             BindingContext =
                 App.Container.Resolve(typeof(BasePopUpViewModel), "basePopUpViewModel") as BasePopUpViewModel;
+            
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            FrameContainer.HeightRequest = -1;
+            //FrameContainer.HeightRequest = -1;
 
-            CloseImage.Rotation = 30;
-            CloseImage.Scale = 0.3;
-            CloseImage.Opacity = 0;
+            //CloseImage.Rotation = 30;
+            //CloseImage.Scale = 0.3;
+            //CloseImage.Opacity = 0;
 
-            CloseImage.FadeTo(1);
-            CloseImage.ScaleTo(1, easing: Easing.SpringOut);
-            CloseImage.RotateTo(0);
+            //CloseImage.FadeTo(1);
+            //CloseImage.ScaleTo(1, easing: Easing.SpringOut);
+            //CloseImage.RotateTo(0);
 
         }
 
@@ -42,9 +43,9 @@ namespace MySleepBook.Views.PopUps
         }
         private async void CloseAllPopup()
         {
-            CloseImage.FadeTo(0);
-            CloseImage.ScaleTo(0.3, easing: Easing.SpringOut);
-            CloseImage.RotateTo(-30);
+            //CloseImage.FadeTo(0);
+            //CloseImage.ScaleTo(0.3, easing: Easing.SpringOut);
+            //CloseImage.RotateTo(-30);
             await Navigation.PopAllPopupAsync();
         }
     }

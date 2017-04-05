@@ -1,13 +1,13 @@
 using Windows.UI;
 using Windows.UI.Xaml.Media;
-using MobileClient.UWP.CustomRendererControls;
 using MySleepBook.CustomControls;
+using MySleepBook.UWP.CustomRendererControls;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 using Thickness = Windows.UI.Xaml.Thickness;
-using Xamarin.Forms;
 
 [assembly: ExportRenderer(typeof(EntryWithBorder), typeof(EntryWithBorderRenderer))]
-namespace MobileClient.UWP.CustomRendererControls
+namespace MySleepBook.UWP.CustomRendererControls
 {
     public class EntryWithBorderRenderer:EntryRenderer
     {

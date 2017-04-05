@@ -5,11 +5,12 @@ using MySleepBook.Views.MasterDetailPage;
 using Xamarin.Forms;
 namespace MySleepBook
 {
-    public class App : Application
+    public partial class App : Application
     {
         public static UnityContainer Container { get; set; }
         public App()
         {
+            InitializeComponent();
             ResolveDependency();
             MainPage = new MainPage();
         }

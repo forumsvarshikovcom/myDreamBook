@@ -102,8 +102,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomRendererControls\CustomFrameRenderer.cs" />
     <Compile Include="CustomRendererControls\ChartRenderer.cs" />
     <Compile Include="CustomRendererControls\ChartSurface.cs" />
+    <Compile Include="CustomRendererControls\CustomSliderRenderer.cs" />
     <Compile Include="CustomRendererControls\EntryWithBorderRenderer.cs" />
     <Compile Include="DependencyServices\SQLite.cs" />
     <Compile Include="Infrastructure\MathHelper.cs" />
@@ -119,6 +121,8 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\arrow_l.png" />
+    <Content Include="Assets\arrow_r.png" />
     <Content Include="Assets\burger.png" />
     <Content Include="Assets\close_circle_button.png" />
     <Content Include="Assets\Logo.png" />

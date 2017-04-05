@@ -1,12 +1,11 @@
-
 using Android.App;
 using Android.Graphics.Drawables;
-using MobileClient.Droid.CustomRendererControls;
+using MySleepBook.Droid.CustomRendererControls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(NavigationPage), typeof(CustomNavigationRenderer))]
-namespace MobileClient.Droid.CustomRendererControls
+namespace MySleepBook.Droid.CustomRendererControls
 {
     public class CustomNavigationRenderer: NavigationRenderer
     {

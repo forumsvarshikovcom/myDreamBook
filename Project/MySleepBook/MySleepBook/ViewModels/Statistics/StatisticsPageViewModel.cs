@@ -1,5 +1,7 @@
-﻿using MySleepBook.Views.PopUps;
+﻿using System;
+using MySleepBook.Views.PopUps;
 using System.Windows.Input;
+using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.Infrastructure.Resourses;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
@@ -12,15 +14,19 @@ namespace MySleepBook.ViewModels.Statistics
         private int _chartTypeSelectedIndex;
         private bool _chartIsVisible;
         private string _noStatisticText;
+        public StatisticCalendarModel CalendarModel { get; set; }
 
         public StatisticsPageViewModel()
         {
-            ShowAddEditStatisticPopUp = new Command(() =>
+            CalendarModel = new StatisticCalendarModel
             {
-                var page = new Statistic_Add_Edit_PopUp();
-
-                PopupNavigation.PushAsync(page,false);
-            });
+                SelectedDateTime = DateTime.Now,
+                DateSelectAction = () =>
+                {
+                    var page = new Statistic_Add_Edit_PopUp();
+                    PopupNavigation.PushAsync(page, false);
+                }
+            };
         }
 
         public int ChartTypeSelectedIndex

@@ -49,10 +49,9 @@
              Font="Medium"
              HorizontalTextAlignment="Center"
              TextColor="#009788"></Label>
-      <controls:Calendar x:Name="CustomCalendar"
-                         StartDay="Monday"
-                         VerticalOptions="EndAndExpand">
-      </controls:Calendar>
+      <StackLayout x:Name="CalendarWrapper"
+                   VerticalOptions="EndAndExpand">
+      </StackLayout>
     </StackLayout>
   </ScrollView>
 </ContentPage>
