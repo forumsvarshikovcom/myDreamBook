@@ -23,7 +23,7 @@ namespace MySleepBook.CustomControls.StatisticCalendar
             DatesBackgroundColor = CustomColors.Yellow;
             DatesTextColor = CustomColors.Green;
 
-            DatesBackgroundColorOutsideMonth = CustomColors.Yellow; ;
+            DatesBackgroundColorOutsideMonth = CustomColors.LightGreen; ;
             DatesTextColorOutsideMonth = CustomColors.Green;
 
             NumberOfWeekTextColor = CustomColors.Green;
@@ -48,16 +48,8 @@ namespace MySleepBook.CustomControls.StatisticCalendar
             StartDay = DayOfWeek.Monday;
             WeekdaysTextColor = CustomColors.Yellow;
             Opacity = 0;
-            
-            SpecialDates =
-                _model.FilledDays.Select(
-                    day =>
-                        new SpecialDate(day)
-                        {
-                            Selectable = true,
-                            BackgroundColor = CustomColors.Green,
-                            TextColor = CustomColors.Yellow
-                        }).ToList();
+
+            SpecialDates = _model.FilledDays;
 
             DateClicked += (sender, args) =>
             {
@@ -71,30 +63,28 @@ namespace MySleepBook.CustomControls.StatisticCalendar
 
             MonthYearButtonClicked += (sender, args) =>
             {
-                _currentMounth = args.DateTime.Month;
+                MonthChanged(args.DateTime);
             };
             LeftArrowClicked += (sender, args) =>
             {
-                _currentMounth = args.DateTime.Month;
+                MonthChanged(args.DateTime);
             };
             RightArrowClicked += (sender, args) =>
             {
-                _currentMounth = args.DateTime.Month;
+                MonthChanged(args.DateTime);
             };
         }
 
         public void RedrawSpecialDates()
         {
-            SpecialDates =
-                _model.FilledDays.Select(
-                    day =>
-                        new SpecialDate(day)
-                        {
-                            Selectable = true,
-                            BackgroundColor = CustomColors.Green,
-                            TextColor = CustomColors.Yellow
-                        }).ToList();
+            SpecialDates = _model.FilledDays;
             this.RaiseSpecialDatesChanged();
+        }
+
+        private void MonthChanged(DateTime date)
+        {
+            _currentMounth = date.Month;
+            _model.MounthChangedAction.Invoke(date);
         }
 
         private bool IsSelectionEnabled(DateTime date)

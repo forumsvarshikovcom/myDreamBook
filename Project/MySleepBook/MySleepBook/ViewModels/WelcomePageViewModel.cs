@@ -15,7 +15,6 @@ namespace MySleepBook.ViewModels
         public WelcomePageViewModel(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _userRepository.Test();
         }
 
         public string WelcomeText

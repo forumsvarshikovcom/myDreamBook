@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml.Media;
+using MySleepBook.CustomControls;
 using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.UWP.CustomRendererControls;
 using Xamarin.Forms;

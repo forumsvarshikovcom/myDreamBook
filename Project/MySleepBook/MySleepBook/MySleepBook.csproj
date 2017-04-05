@@ -49,14 +49,17 @@
     <Compile Include="CustomControls\CustomFrame.cs" />
     <Compile Include="CustomControls\EntryWithBorder.cs" />
     <Compile Include="CustomControls\MeansTabPage.cs" />
-    <Compile Include="CustomControls\StatisticCalendar\CustomSlider.cs" />
+    <Compile Include="CustomControls\CustomSlider.cs" />
     <Compile Include="CustomControls\StatisticCalendar\StatisticCalendar.cs" />
     <Compile Include="CustomControls\StatisticCalendar\StatisticCalendarModel.cs" />
     <Compile Include="DataManagers\LocalDbManager\Domain\BaseEntity.cs" />
+    <Compile Include="DataManagers\LocalDbManager\Domain\DreamCalendar.cs" />
     <Compile Include="DataManagers\LocalDbManager\Domain\User.cs" />
     <Compile Include="DataManagers\LocalDbManager\Repositories\Implementations\BaseRepository.cs" />
+    <Compile Include="DataManagers\LocalDbManager\Repositories\Implementations\DreamCalendarRepository.cs" />
     <Compile Include="DataManagers\LocalDbManager\Repositories\Implementations\UserRepository.cs" />
     <Compile Include="DataManagers\LocalDbManager\Repositories\Interfaces\IBaseRepository.cs" />
+    <Compile Include="DataManagers\LocalDbManager\Repositories\Interfaces\IDreamCalendarRepository.cs" />
     <Compile Include="DataManagers\LocalDbManager\Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Infrastructure\Animation\PopUpAnimation.cs" />
     <Compile Include="Infrastructure\Constants\CustomColors.cs" />
@@ -91,9 +94,12 @@
     <Compile Include="Infrastructure\Translator\Translator.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\DreamCalendarService.cs" />
+    <Compile Include="Services\Interfaces\IDreamCalendarService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DreamBookMeans\MeansSearchPageViewModel.cs" />
     <Compile Include="ViewModels\PopUps\BasePopUpViewModel.cs" />
+    <Compile Include="ViewModels\PopUps\Statistic_Add_Edit_PopUpViewModel.cs" />
     <Compile Include="ViewModels\Statistics\StatisticsPageViewModel.cs" />
     <Compile Include="ViewModels\WelcomePageViewModel.cs" />
     <Compile Include="Views\DreamBookMeans\MeansPage.xaml.cs">
@@ -120,10 +126,7 @@
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Infrastructure\Resourses\Common.resx">
       <Generator>ResXFileCodeGenerator</Generator>

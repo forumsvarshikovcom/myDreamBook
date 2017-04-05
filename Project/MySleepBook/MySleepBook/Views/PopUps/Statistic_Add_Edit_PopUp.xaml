@@ -2,10 +2,135 @@
 <popUps:PopUpBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:popUps="clr-namespace:MySleepBook.Views.PopUps;assembly=MySleepBook"
+             xmlns:statisticCalendar="clr-namespace:MySleepBook.CustomControls.StatisticCalendar;assembly=MySleepBook"
+             xmlns:customControls="clr-namespace:MySleepBook.CustomControls;assembly=MySleepBook"
              x:Class="MySleepBook.Views.PopUps.Statistic_Add_Edit_PopUp"
              ControlTemplate="{StaticResource PopUpBaseTemplate}">
-  <StackLayout>
-    <Label TextColor="#009788"
-           Text="rrrrr sdfsd fs df sd f sdfsd fsdf s d f sd fs d f sd f s dfsd f sdf sd f s df sd f sd f sdf"></Label>
-  </StackLayout>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="1"/>
+      <RowDefinition Height="30" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="35" />
+      <RowDefinition Height="1"/>
+      <RowDefinition Height="30" />
+      <RowDefinition Height="20"/>
+      <RowDefinition Height="35" />
+      <RowDefinition Height="1"/>
+      <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="4*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+    
+    <Label Grid.Row="0"
+           Grid.ColumnSpan="2"
+           Text="Установите уровни от 0 до 5"
+           FontSize="Medium"
+           TextColor="#009788"
+           HorizontalTextAlignment="Center"></Label>
+    
+    <StackLayout BackgroundColor="#18a295"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="0"></StackLayout>
+    
+    <Label Grid.Row="2"
+           Grid.Column="0"
+           FontSize="Small"
+           Text="Приятное сновидение"
+           TextColor="#009788"></Label>
+    
+    <StackLayout Grid.Row="3"
+                 Grid.Column="0"
+                 Orientation="Horizontal"
+                 VerticalOptions="EndAndExpand"
+                 Margin="0,0,20,0">
+      <Label HorizontalOptions="StartAndExpand"
+             Text="0"
+             FontSize="Micro"
+             TextColor="#009788"
+             VerticalOptions="End"></Label>
+      <Label HorizontalOptions="EndAndExpand"
+             Text="5"
+             FontSize="Micro"
+             TextColor="#009788"
+             VerticalOptions="End"></Label>
+    </StackLayout>
+    
+    <Label Grid.Row="3"
+           Grid.Column="1"
+           Grid.RowSpan="2"
+           Text="{Binding GoodSleepLineValue}"
+           FontSize="Medium"
+           TextColor="#009788"></Label>
+
+    <customControls:CustomSlider Grid.Row="4"
+                                    Grid.Column="0"
+                                    Value="{Binding GoodSleepLineValue}"
+                                    Minimum="0"
+                                    Maximum="5"
+                                    Margin="0,0,20,0"
+                                    LineColor="#009788"></customControls:CustomSlider>
+
+    <StackLayout BackgroundColor="#18a295"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="0"></StackLayout>
+    
+    <Label Grid.Row="6"
+           Grid.Column="0"
+           FontSize="Small"
+           Text="Тревожное сновидение"
+           TextColor="#b81532"></Label>
+
+    <StackLayout Grid.Row="7"
+                 Grid.Column="0"
+                 Orientation="Horizontal"
+                 VerticalOptions="EndAndExpand"
+                 Margin="0,0,20,0">
+      <Label HorizontalOptions="StartAndExpand"
+             Text="0"
+             FontSize="Micro"
+             TextColor="#b81532"
+             VerticalOptions="End"></Label>
+      <Label HorizontalOptions="EndAndExpand"
+             Text="5"
+             FontSize="Micro"
+             TextColor="#b81532"
+             VerticalOptions="End"></Label>
+    </StackLayout>
+
+    <Label Grid.Row="7"
+           Grid.Column="1"
+           Grid.RowSpan="2"
+           Text="{Binding BadSleepLineValue}"
+           FontSize="Medium"
+           TextColor="#b81532"></Label>
+
+    <customControls:CustomSlider Grid.Row="8"
+                                    Grid.Column="0"
+                                    Value="{Binding BadSleepLineValue}"
+                                    Minimum="0"
+                                    Maximum="5"
+                                    Margin="0,0,20,0"
+                                    LineColor="#b81532"></customControls:CustomSlider>
+
+    <StackLayout BackgroundColor="#18a295"
+                Grid.Row="9"
+                Grid.ColumnSpan="2"
+                Grid.Column="0"></StackLayout>
+    
+    <Button Grid.Row="10"
+            Grid.ColumnSpan="2"
+            Command="{Binding SaveCommand}"
+            TextColor="#009788"
+            FontSize="Medium"
+            HorizontalOptions="FillAndExpand"
+            Text="Сохранить"
+            BackgroundColor="Transparent"></Button>
+    
+  </Grid>
 </popUps:PopUpBase>

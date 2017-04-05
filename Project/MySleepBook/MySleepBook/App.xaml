@@ -10,8 +10,8 @@
       <ControlTemplate x:Key="PopUpBaseTemplate">
         <AbsoluteLayout VerticalOptions="Center"
                   HorizontalOptions="Center"
-                  HeightRequest="150"
-                  WidthRequest="350">
+                  HeightRequest="{TemplateBinding BindingContext.LayoutHeight}"
+                  WidthRequest="{TemplateBinding BindingContext.LayoutWidth}">
           <customControls:CustomFrame InlineColor="#f4e1c1"
                                       OutlineColor="#009788"
                                       BorderRadius="10"

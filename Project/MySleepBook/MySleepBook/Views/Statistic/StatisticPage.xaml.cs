@@ -6,7 +6,6 @@ using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.Infrastructure.Constants;
 using MySleepBook.ViewModels.Statistics;
 using Xamarin.Forms;
-using XamForms.Controls;
 
 namespace MySleepBook.Views.Statistic
 {
@@ -25,16 +24,8 @@ namespace MySleepBook.Views.Statistic
                 await Task.Delay(Device.OS == TargetPlatform.Android ? 260 : 100);
                 Device.BeginInvokeOnMainThread(() =>
                 {
-
-                    _viewModel.CalendarModel.FilledDays = new List<DateTime>
-                    {
-                        new DateTime(2017,4,1),
-                        new DateTime(2017,4,2),
-                        new DateTime(2017,4,3),
-                        new DateTime(2017,4,9)
-                    };
-
                     var calendar = new StatisticCalendar(_viewModel.CalendarModel);
+                    _viewModel.GetStatisticPerMounth(DateTime.Now);
                     CalendarWrapper.Children.Add(calendar);
                     calendar.FadeTo(1, 500);
                 });

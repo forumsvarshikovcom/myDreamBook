@@ -18,7 +18,7 @@ namespace MySleepBook.Views.PopUps
         }
         private async void CloseAllPopup()
         {
-            await Navigation.PopAllPopupAsync();
+            await Navigation.PopAllPopupAsync(false);
         }
     }
 }

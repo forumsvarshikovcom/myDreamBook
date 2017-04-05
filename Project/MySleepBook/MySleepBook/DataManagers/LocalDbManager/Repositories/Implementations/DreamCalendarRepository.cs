@@ -3,8 +3,8 @@ using MySleepBook.DataManagers.LocalDbManager.Repositories.Interfaces;
 
 namespace MySleepBook.DataManagers.LocalDbManager.Repositories.Implementations
 {
-    public class UserRepository: BaseRepository<User>, IUserRepository
+    public class DreamCalendarRepository: BaseRepository<DreamCalendar>, IDreamCalendarRepository
     {
-        public UserRepository() { }
+        public DreamCalendarRepository() { }
     }
 }

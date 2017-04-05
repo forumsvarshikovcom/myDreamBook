@@ -1,8 +1,11 @@
 ﻿using Microsoft.Practices.Unity;
 using MySleepBook.DataManagers.LocalDbManager.Repositories.Implementations;
 using MySleepBook.DataManagers.LocalDbManager.Repositories.Interfaces;
+using MySleepBook.Services.Implementations;
+using MySleepBook.Services.Interfaces;
 using MySleepBook.Views.MasterDetailPage;
 using Xamarin.Forms;
+
 namespace MySleepBook
 {
     public partial class App : Application
@@ -19,6 +22,8 @@ namespace MySleepBook
         {
             Container = new UnityContainer();
             Container.RegisterType<IUserRepository, UserRepository>();
+            Container.RegisterType<IDreamCalendarRepository, DreamCalendarRepository>();
+            Container.RegisterType<IDreamCalendarService, DreamCalendarService>();
         }
         protected override void OnStart()
         {

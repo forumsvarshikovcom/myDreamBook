@@ -1,18 +1,19 @@
-﻿using System;
-using MySleepBook.ViewModels.PopUps;
-using Rg.Plugins.Popup.Extensions;
+﻿using MySleepBook.ViewModels.PopUps;
 using Xamarin.Forms;
 
 namespace MySleepBook.Views.PopUps
 {
     public partial class Statistic_Add_Edit_PopUp: PopUpBase
     {
-        private BasePopUpViewModel _viewModel;
-        public Statistic_Add_Edit_PopUp()
+        private Statistic_Add_Edit_PopUpViewModel _viewModel;
+        public Statistic_Add_Edit_PopUp(Statistic_Add_Edit_PopUpViewModel viewModel)
         {
             InitializeComponent();
-            _viewModel = App.Container.Resolve(typeof(BasePopUpViewModel), "basePopUpViewModel") as BasePopUpViewModel;
+            _viewModel = viewModel;
             BindingContext = _viewModel;
+            _viewModel.LayoutHeight = 300;
+            _viewModel.LayoutWidth = 400;
+            _viewModel.ExitIconBounds = new Rectangle(1.06, -0.06, 0.1, 0.1);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Android.Graphics;
+using MySleepBook.CustomControls;
 using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.Droid.CustomRendererControls;
 using Xamarin.Forms;

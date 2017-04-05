@@ -74,7 +74,7 @@ namespace MySleepBook.ViewModels.DreamBookMeans
 
         private void SearchTextChanged(CancellationToken token)
         {
-            Task.Delay(300, token).ContinueWith(tsk => 
+            Task.Delay(50, token).ContinueWith(tsk => 
             {
               if (!_autoCompleteCancelTokenSource.IsCancellationRequested && _tempAutoCompleteSearchPhrase != SearchText)
               {
@@ -84,19 +84,19 @@ namespace MySleepBook.ViewModels.DreamBookMeans
                         MessagingCenter.Send<MeansSearchPageViewModel, AnimationTypes>(this,
                             MessagingCenterConstants.StartAnimation, AnimationTypes.HideSearchLogo);
                         var startWithKeys =
-                            DreamBookDataConstants.DreamBookKeys.Where(x => x.Name.StartsWith(SearchText.ToLower()))
-                                .ToList();
+                            DreamBookDataConstants.DreamBookKeys.Where(x => x.Name.StartsWith(SearchText.ToLower()));
                         var containsKeys = SearchText.Length > 2
                             ? DreamBookDataConstants.DreamBookKeys.Where(
                                     x =>
                                         !x.Name.StartsWith(SearchText.ToLower()) &&
                                         x.Name.Contains(SearchText.ToLower()))
-                                .ToList()
                             : null;
 
                         var keys = containsKeys != null
-                            ? startWithKeys.Union(containsKeys).ToList()
+                            ? startWithKeys.Union(containsKeys)
                             : startWithKeys;
+
+                        keys = keys.Take(10);
 
                         Device.BeginInvokeOnMainThread(() =>
                         {
@@ -105,7 +105,7 @@ namespace MySleepBook.ViewModels.DreamBookMeans
                             Description = Common.txt_NotFound;
                             if (keys.Any())
                             {
-                                AutocompleteItems = keys;
+                                AutocompleteItems = keys.ToList();
                             }
                         });
                     }

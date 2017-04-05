@@ -2,7 +2,8 @@
 
 namespace MySleepBook.DataManagers.LocalDbManager.Repositories.Interfaces
 {
-    public interface IUserRepository: IBaseRepository<User>
+    public interface IDreamCalendarRepository:IBaseRepository<DreamCalendar>
     {
+        
     }
 }

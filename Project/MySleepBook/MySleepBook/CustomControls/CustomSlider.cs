@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace MySleepBook.CustomControls.StatisticCalendar
+namespace MySleepBook.CustomControls
 {
     public class CustomSlider:Slider
     {
