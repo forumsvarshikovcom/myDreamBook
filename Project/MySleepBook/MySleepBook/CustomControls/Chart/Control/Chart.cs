@@ -288,10 +288,13 @@ namespace MySleepBook.CustomControls.Chart
 				}
 			}
 
-			if (Series.FirstOrDefault(s => s.Type == ChartType.Pie) == null)
-				highestValue = DrawGrid(highestValue);
+		    if (Series.FirstOrDefault(s => s.Type == ChartType.Pie) == null)
+		    {
+		        var valAfterDraw = DrawGrid(highestValue);
+		        highestValue = valAfterDraw == 0 ? highestValue : valAfterDraw;
+		    }
 
-			// If there are no bars, fake them
+		    // If there are no bars, fake them
 			if (noOfBars == 0)
 				noOfBars = Series[0].Points.Count;
 
@@ -332,8 +335,8 @@ namespace MySleepBook.CustomControls.Chart
 		/// <returns>New highest value.</returns>
 		private float DrawGrid(double highestValue)
 		{
-			int noOfHorizontalLines = 4;
-			double quarterValue = highestValue / 4;
+			int noOfHorizontalLines = 5;
+			double quarterValue = highestValue / 5;
 			double valueOfPart = ((int)Math.Round(quarterValue / 10.0)) * 10;
 			if (valueOfPart < quarterValue)
 				noOfHorizontalLines = 5;
@@ -347,8 +350,11 @@ namespace MySleepBook.CustomControls.Chart
 				{
 					OnDrawGridLine(this, new DrawEventArgs<DoubleDrawingData>() { Data = new DoubleDrawingData(PADDING_LEFT, PADDING_TOP + (quarterHeight * i), WidthRequest, PADDING_TOP + (quarterHeight * i), 0) });
 				}
-				double currentValue = (valueOfPart * noOfHorizontalLines) - (valueOfPart * i);
-				OnDrawText(this, new DrawEventArgs<TextDrawingData>() { Data = new TextDrawingData(currentValue.ToString(), 10, PADDING_TOP + (quarterHeight * i) + 5) });
+				//double currentValue = (valueOfPart * noOfHorizontalLines) - (valueOfPart * i);
+			    int currentValue = noOfHorizontalLines - i;
+			    string txt = currentValue == 0 ? string.Empty : currentValue.ToString();
+
+                OnDrawText(this, new DrawEventArgs<TextDrawingData>() { Data = new TextDrawingData(txt, 10, PADDING_TOP + (quarterHeight * i) + 5) });
 			}
 
 			return (float)valueOfPart * noOfHorizontalLines;
@@ -448,17 +454,18 @@ namespace MySleepBook.CustomControls.Chart
 
 			for (int i = 0; i < points.Count; i++)
 			{
-			    if (i % 2 == 0)
-			    {
-			        OnDrawText(this,
-			            new DrawEventArgs<TextDrawingData>()
-			            {
-			                Data =
-			                    new TextDrawingData(points[i].Label,
-			                        (widthIterator + widthOfAllBars / 2) - (points[i].Label.Length * 4), HeightRequest + 25, 30)
-			            });
-			    }
-			    widthIterator += widthPerBar * noOfBarSeries + Spacing;
+                //if (i % 2 == 0)
+                //{
+                //    OnDrawText(this,
+                //        new DrawEventArgs<TextDrawingData>()
+                //        {
+                //            Data =
+                //                new TextDrawingData(points[i].Label,
+                //                    (widthIterator + widthOfAllBars / 2) - (points[i].Label.Length * 4), HeightRequest + 25, 30)
+                //        });
+                //}
+                OnDrawText(this, new DrawEventArgs<TextDrawingData>() { Data = new TextDrawingData(points[i].Label, (widthIterator + widthOfAllBars / 2) - (points[i].Label.Length * 4), HeightRequest + 25) });
+                widthIterator += widthPerBar * noOfBarSeries + Spacing;
 			}
 		}
 		#endregion

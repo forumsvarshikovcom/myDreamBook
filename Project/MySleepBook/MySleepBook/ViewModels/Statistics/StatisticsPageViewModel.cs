@@ -5,6 +5,7 @@ using System.Windows.Input;
 using MySleepBook.CustomControls.StatisticCalendar;
 using MySleepBook.DataManagers.LocalDbManager.Domain;
 using MySleepBook.Infrastructure.Constants;
+using MySleepBook.Infrastructure.Models;
 using MySleepBook.Infrastructure.Resourses;
 using MySleepBook.Services.Interfaces;
 using MySleepBook.ViewModels.PopUps;
@@ -66,6 +67,11 @@ namespace MySleepBook.ViewModels.Statistics
             CalendarModel.RedrawSpecialDatesAction.Invoke();
             ChartIsVisible = CalendarModel.FilledDays.Any();
         }
+
+        public SeriasForChart GetSerias()
+        {
+            return _dreamCalendarService.GetSeriasForChart(_chartTypeSelectedIndex == 0, CalendarModel.SelectedDateTime);
+        }
         #region privateMethods
 
         private void DateSelectionProcess()
@@ -79,7 +85,7 @@ namespace MySleepBook.ViewModels.Statistics
             statisticViewModel.SaveAction = () => { SaveCalendarStatistic(storedStatistic, statisticViewModel); };
 
             var page = new Statistic_Add_Edit_PopUp(statisticViewModel);
-            PopupNavigation.PushAsync(page, true);
+            PopupNavigation.PushAsync(page, false);
         }
 
         private void SaveCalendarStatistic(DreamCalendar storedStatistic, Statistic_Add_Edit_PopUpViewModel statisticViewModel)

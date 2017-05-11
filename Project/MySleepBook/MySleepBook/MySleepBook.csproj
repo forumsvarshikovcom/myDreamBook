@@ -70,6 +70,7 @@
     <Compile Include="Infrastructure\DependencyService\ISQLite.cs" />
     <Compile Include="Infrastructure\Enums\AnimationTypes.cs" />
     <Compile Include="Infrastructure\Models\AutocompleteItem.cs" />
+    <Compile Include="Infrastructure\Models\SeriasForChart.cs" />
     <Compile Include="Infrastructure\Naviagation\NaviagationService.cs" />
     <Compile Include="Infrastructure\Resourses\Common.Designer.cs">
       <AutoGen>True</AutoGen>

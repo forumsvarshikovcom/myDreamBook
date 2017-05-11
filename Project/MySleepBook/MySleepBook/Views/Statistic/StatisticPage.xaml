@@ -12,7 +12,7 @@
       <freshEssentials:InverseBooleanConverter x:Key="InverseConverter" />
     </ResourceDictionary>
   </ContentPage.Resources>
-  
+
   <ScrollView VerticalOptions="FillAndExpand">
     <StackLayout VerticalOptions="FillAndExpand">
       <freshEssentials:SegmentedButtonGroup SelectedIndex="{Binding ChartTypeSelectedIndex}"
@@ -29,20 +29,17 @@
           <freshEssentials:SegmentedButton Title="Месяц"/>
         </freshEssentials:SegmentedButtonGroup.SegmentedButtons>
       </freshEssentials:SegmentedButtonGroup>
-      <chart:Chart x:Name="CombinationChart"
+      <!--<chart:Chart x:Name="CombinationChart"
                    IsVisible="{Binding ChartIsVisible}"
                    Color="#18a295"
                    HorizontalOptions="Center"
                    HeightRequest="300"
                    WidthRequest="450"
                    Spacing="10">
-        <chart:Chart.Series>
-          <chart:Series x:Name="goodSleepLine" Type="Line" Color="#009788">
-          </chart:Series>
-          <chart:Series x:Name="badSleepLine" Type="Line" Color="#b81532">
-          </chart:Series>
-        </chart:Chart.Series>
-      </chart:Chart>
+      </chart:Chart>-->
+      <StackLayout x:Name="ChartWrapper">
+        
+      </StackLayout>
       <Label Text="{Binding NoStatisticText}"
              IsVisible="{Binding ChartIsVisible, Converter={StaticResource InverseConverter}}"
              Margin="20"

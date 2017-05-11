@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MySleepBook.Infrastructure.Models;
 
 namespace MySleepBook.Infrastructure.Constants
@@ -3620,5 +3621,16 @@ new AutocompleteItem {Name = "звезда"},
 new AutocompleteItem {Name = "звонок"}
         };
         #endregion
+
+        public static Dictionary<DayOfWeek, string> WeekNames = new Dictionary<DayOfWeek, string>
+        {
+            [DayOfWeek.Monday] = "Понедельник",
+            [DayOfWeek.Tuesday] = "Вторник",
+            [DayOfWeek.Wednesday] = "Среда",
+            [DayOfWeek.Thursday] = "Четверг",
+            [DayOfWeek.Friday] = "Пятница",
+            [DayOfWeek.Saturday] = "Суббота",
+            [DayOfWeek.Sunday] = "Воскресенье"
+        };
     }
 }
